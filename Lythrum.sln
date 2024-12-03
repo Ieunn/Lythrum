@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BEED375C-D168-4894-BE6F-30FD1E47AA6A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9E6CE561-F050-412E-8F18-61ACDA1D0A6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lythrum", "src\Lythrum\Lythrum.csproj", "{C3A08C14-9E00-42F5-89C9-BDCA5E814D26}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lythrum.Core", "src\Lythrum.Core\Lythrum.Core.csproj", "{804FE437-309A-4DB5-AE98-05AD5AF24897}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,12 +16,12 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C3A08C14-9E00-42F5-89C9-BDCA5E814D26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C3A08C14-9E00-42F5-89C9-BDCA5E814D26}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C3A08C14-9E00-42F5-89C9-BDCA5E814D26}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C3A08C14-9E00-42F5-89C9-BDCA5E814D26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{804FE437-309A-4DB5-AE98-05AD5AF24897}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{804FE437-309A-4DB5-AE98-05AD5AF24897}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{804FE437-309A-4DB5-AE98-05AD5AF24897}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{804FE437-309A-4DB5-AE98-05AD5AF24897}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{C3A08C14-9E00-42F5-89C9-BDCA5E814D26} = {BEED375C-D168-4894-BE6F-30FD1E47AA6A}
+		{804FE437-309A-4DB5-AE98-05AD5AF24897} = {9E6CE561-F050-412E-8F18-61ACDA1D0A6F}
 	EndGlobalSection
 EndGlobal
