@@ -1,60 +1,22 @@
-using Arch.System;
-
 namespace Lythrum.Core;
 
 public abstract class LoopAdapter : ILoop
 {
-    protected readonly Loop CoreLoop;
-    protected readonly ITimeProvider TimeProvider;
-    
-    protected LoopAdapter(Group<float> systems, ITimeProvider timeProvider, ILoopSettings? settings = null)
-    {
-        CoreLoop = new Loop(systems, settings);
-        TimeProvider = timeProvider;
-    }
+    private bool _isInitialized;
 
-    public LoopPhase CurrentPhase => CoreLoop.CurrentPhase;
+    protected readonly IEnumerable<GroupConfig> GroupConfigs;
+
+    protected Loop CoreLoop;
+
     public bool IsRunning => CoreLoop.IsRunning;
     public bool IsPaused => CoreLoop.IsPaused;
-    public ILoopSettings Settings => CoreLoop.Settings;
 
-    public virtual void Start()
+    protected LoopAdapter()
     {
-        OnInitialize();
-        CoreLoop.Start();
+        GroupConfigs = ConfigureGroups();
     }
 
-    public virtual void Stop()
-    {
-        OnShutdown();
-        CoreLoop.Stop();
-    }
-
-    public virtual void Pause()
-    {
-        OnPause();
-        CoreLoop.Pause();
-    }
-
-    public virtual void Resume()
-    {
-        OnResume();
-        CoreLoop.Resume();
-    }
-
-    public virtual void Tick(float deltaTime)
-    {
-        if (!IsRunning || IsPaused) return;
-        
-        PreUpdate();
-        CoreLoop.Tick(TimeProvider.DeltaTime * TimeProvider.TimeScale);
-        PostUpdate();
-    }
-
-    public virtual void UpdateSettings(ILoopSettings settings)
-    {
-        CoreLoop.UpdateSettings(settings);
-    }
+    protected abstract IEnumerable<GroupConfig> ConfigureGroups();
 
     protected abstract void OnInitialize();
     protected abstract void OnShutdown();
@@ -64,8 +26,74 @@ public abstract class LoopAdapter : ILoop
     protected virtual void PreUpdate() { }
     protected virtual void PostUpdate() { }
     
+    public SystemRegistry CreateRegistry()
+    {
+        if (_isInitialized)
+        {
+            throw new InvalidOperationException("Loop is already initialized");
+        }
+        return new SystemRegistry(GroupConfigs);
+    }
+
+    public void Initialize(SystemRegistry registry)
+    {
+        if (_isInitialized)
+        {
+            throw new InvalidOperationException("Loop is already initialized");
+        }
+
+        CoreLoop = new Loop(registry.Build());
+        _isInitialized = true;
+    }
+
+    public virtual void Start()
+    {
+        EnsureInitialized();
+        OnInitialize();
+        CoreLoop.Start();
+    }
+
+    public virtual void Stop()
+    {
+        EnsureInitialized();
+        OnShutdown();
+        CoreLoop.Stop();
+    }
+
+    public virtual void Pause()
+    {
+        EnsureInitialized();
+        OnPause();
+        CoreLoop.Pause();
+    }
+
+    public virtual void Resume()
+    {
+        EnsureInitialized();
+        OnResume();
+        CoreLoop.Resume();
+    }
+
+    public virtual void Tick(float deltaTime)
+    {
+        EnsureInitialized();
+        if (!IsRunning || IsPaused) return;
+        
+        PreUpdate();
+        CoreLoop.Tick(deltaTime);
+        PostUpdate();
+    }
+
+    private void EnsureInitialized()
+    {
+        if (!_isInitialized)
+        {
+            throw new InvalidOperationException("Loop must be initialized before use");
+        }
+    }
+    
     public virtual void Dispose()
     {
-        CoreLoop.Dispose();
+        CoreLoop?.Dispose();
     }
 }
