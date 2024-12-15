@@ -1,6 +1,7 @@
 ﻿using Arch.System;
+using Lythrum.Core;
 
-namespace Lythrum.Core;
+namespace Lythrum.Bridge;
 
 public sealed class Loop : ILoop
 {

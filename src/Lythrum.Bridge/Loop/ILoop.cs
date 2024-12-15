@@ -1,4 +1,4 @@
-namespace Lythrum.Core;
+namespace Lythrum.Bridge;
 
 public interface ILoop : IDisposable
 {

@@ -7,6 +7,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9E6CE561-F05
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lythrum.Core", "src\Lythrum.Core\Lythrum.Core.csproj", "{804FE437-309A-4DB5-AE98-05AD5AF24897}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lythrum.Service", "src\Lythrum.Service\Lythrum.Service.csproj", "{370BF76F-11FE-4E30-9A5F-24A856CC7D1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lythrum.Infrastructure", "src\Lythrum.Infrastructure\Lythrum.Infrastructure.csproj", "{65E587CC-5B42-4BC3-8E4D-EB7E18E6B5EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lythrum.Bridge", "src\Lythrum.Bridge\Lythrum.Bridge.csproj", "{66D6B066-80E6-40B7-AFBA-BB053D8E8785}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +26,23 @@ Global
 		{804FE437-309A-4DB5-AE98-05AD5AF24897}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{804FE437-309A-4DB5-AE98-05AD5AF24897}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{804FE437-309A-4DB5-AE98-05AD5AF24897}.Release|Any CPU.Build.0 = Release|Any CPU
+		{370BF76F-11FE-4E30-9A5F-24A856CC7D1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{370BF76F-11FE-4E30-9A5F-24A856CC7D1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{370BF76F-11FE-4E30-9A5F-24A856CC7D1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{370BF76F-11FE-4E30-9A5F-24A856CC7D1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65E587CC-5B42-4BC3-8E4D-EB7E18E6B5EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65E587CC-5B42-4BC3-8E4D-EB7E18E6B5EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65E587CC-5B42-4BC3-8E4D-EB7E18E6B5EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65E587CC-5B42-4BC3-8E4D-EB7E18E6B5EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66D6B066-80E6-40B7-AFBA-BB053D8E8785}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66D6B066-80E6-40B7-AFBA-BB053D8E8785}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66D6B066-80E6-40B7-AFBA-BB053D8E8785}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66D6B066-80E6-40B7-AFBA-BB053D8E8785}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{804FE437-309A-4DB5-AE98-05AD5AF24897} = {9E6CE561-F050-412E-8F18-61ACDA1D0A6F}
+		{370BF76F-11FE-4E30-9A5F-24A856CC7D1A} = {9E6CE561-F050-412E-8F18-61ACDA1D0A6F}
+		{65E587CC-5B42-4BC3-8E4D-EB7E18E6B5EB} = {9E6CE561-F050-412E-8F18-61ACDA1D0A6F}
+		{66D6B066-80E6-40B7-AFBA-BB053D8E8785} = {9E6CE561-F050-412E-8F18-61ACDA1D0A6F}
 	EndGlobalSection
 EndGlobal

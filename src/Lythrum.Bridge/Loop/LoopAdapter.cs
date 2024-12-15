@@ -1,4 +1,6 @@
-namespace Lythrum.Core;
+using Lythrum.Core;
+
+namespace Lythrum.Bridge;
 
 public abstract class LoopAdapter : ILoop
 {
